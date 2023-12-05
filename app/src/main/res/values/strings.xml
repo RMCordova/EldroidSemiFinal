@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CordovaRestAPI</string>
+    <string name="fetch_users">Fetch Users</string>
+    <string name="create_user">Create User</string>
+    <string name="update_user">Update User</string>
+    <string name="delete_user">Delete User</string>
+</resources>
