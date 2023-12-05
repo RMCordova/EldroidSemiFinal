@@ -4,4 +4,11 @@
     <string name="create_user">Create User</string>
     <string name="update_user">Update User</string>
     <string name="delete_user">Delete User</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="fetch_tweets">Fetch Tweets</string>
+    <string name="create_tweet">Create Tweet</string>
+    <string name="update_tweet">Update Tweet</string>
+    <string name="delete_tweet">Delete Tweet</string>
 </resources>

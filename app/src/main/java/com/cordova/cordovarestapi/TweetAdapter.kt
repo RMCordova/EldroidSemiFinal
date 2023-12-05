@@ -1,7 +1,7 @@
 package com.cordova.cordovarestapi
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +10,12 @@ import com.cordova.cordovarestapi.databinding.ItemTweetBinding
 class TweetAdapter : ListAdapter<Tweet, TweetAdapter.TweetViewHolder>(TweetDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TweetViewHolder {
-        val binding = ItemTweetBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding: ItemTweetBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
+            R.layout.item_tweet,
+            parent,
+            false
+        )
         return TweetViewHolder(binding)
     }
 
@@ -22,11 +27,8 @@ class TweetAdapter : ListAdapter<Tweet, TweetAdapter.TweetViewHolder>(TweetDiffC
     class TweetViewHolder(private val binding: ItemTweetBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(tweet: Tweet) {
-            binding.apply {
-                nameTextView.text = tweet.name
-                descriptionTextView.text = tweet.description
-                timestampTextView.text = "Timestamp: ${tweet.timestamp._seconds}"
-            }
+            binding.tweet = tweet
+            binding.executePendingBindings()
         }
     }
 
